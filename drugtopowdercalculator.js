@@ -111,7 +111,7 @@ function inputvalue(inputid,inputvalue){
     if(postblock.packnum==0.00 || postblock.quantity==0.00){
         inputcal="未輸入完成";
     }else{
-        postblock.inputcal="= 共 "+String(postblock.quantity)+" 顆，共"+String(postblock.packnum)+" 包 ";
+        postblock.inputcal="共 "+String(postblock.quantity)+" 顆，共"+String(postblock.packnum)+" 包";
     }
     postblock.innerHTML="<div style='background-color: antiquewhite;'>"+postblock.nameinput+"</br>"+postblock.inputhtml+"</br>"+postblock.inputcal+"</div><span style='display:flex'><button id='casebtn' onclick='savetext()' style='width:50px;'>儲存</button><span style='width:100%;opacity:0.1;'></span></span>";
 }
@@ -122,7 +122,7 @@ function inputvalue2(inputid,inputvalue){
     element.value=parseFloat(inputvalue);
     countdose.dose2in=roundToTwo(countdose.quantity2in.value/countdose.pack2in.value);
     countdose.duration2in=roundToTwo(countdose.pack2in.value/countdose.frequency2in.value);
-    postblock.inputcal="= 共 "+String(countdose.quantity2in.value)+" 顆，共"+String(countdose.pack2in.value)+" 包 ";
+    postblock.inputcal="共 "+String(countdose.quantity2in.value)+" 顆，共"+String(countdose.pack2in.value)+" 包";
     if(countdose.pack2in.value == 0 || countdose.frequency2in.value == 0){
         postblock.inputhtml="未輸入完成";
     }else{
