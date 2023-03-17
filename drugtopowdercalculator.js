@@ -28,22 +28,20 @@ function shiftcount(element,num){
     element.style.backgroundColor="red";
     element.parentNode.childNodes[num].style.backgroundColor="grey";
     if(num==1){
-        countdose.blockall.style="display:none"
-        countdose.blockall2.style="display:flex"
+        countdose.blockall.classList.remove('active');
+        countdose.blockall2.classList.add('active');
     }else{
-        countdose.blockall.style="display:flex"
-        countdose.blockall2.style="display:none"
+        countdose.blockall.classList.add('active');
+        countdose.blockall2.classList.remove('active');
     }
 
 }
 function showhide(elementid){
     let element=document.querySelector("#"+elementid);
-    if(element.original){
-        element.style="display:none";
-        delete element.original
+    if(element.classList.contains('active')){
+        element.classList.remove('active');
     }else{
-        element.original=element.style
-        element.style="display:block;"
+        element.classList.add('active');
     }
 }
 function selectedin(element,hideid){
