@@ -46,7 +46,7 @@
                 <li onclick="inputvalue('dosein',0.67),selectedin(this,'dosein')">0.67</li>
             </ul>
             <li id="dosevarselect" onclick="selected('doseinvalue','dosevar')">自訂</li>
-            <ul style="width:100%">
+            <ul style="width:100%;display:flex;justify-content: center;">
                 <input style="display:none;" id="dosevar" class="inputvar" type="number" min="0" value="0" onchange="inputvalue('dosein',this.value)"/>
             </ul>
         </ul>
@@ -71,7 +71,10 @@
                 <li onclick="inputvalue('durationin',3.0),selectedin(this,'durationin')">3</li>
                 <li onclick="inputvalue('durationin',7.0),selectedin(this,'durationin')">7</li>
             </ul>
-            <li id="durationselect" onclick="selected('durationinvalue','durationvar')">自訂<input id="durationvar" class="inputvar" type="number" min="0" value="0" style="display:none;"  onchange="inputvalue('durationin',this.value)" /></li>
+            <li id="durationselect" onclick="selected('durationinvalue','durationvar')">自訂</li>
+            <ul style="width:100%;display:flex;justify-content: center;">
+                <input id="durationvar" class="inputvar" type="number" min="0" value="0" style="display:none;"  onchange="inputvalue('durationin',this.value)" />
+            </ul>
         </ul>
         <ul id="day1in" class="inputblock">
             <li class="blocktitle">首日包數</li>
@@ -81,7 +84,10 @@
                 <li onclick="inputvalue('day1in',2.0),selectedin(this,'day1in')">2</li>
                 <li onclick="inputvalue('day1in',3.0),selectedin(this,'day1in')">3</li>
             </ul>
-            <li id="day1select" onclick="selected('day1invalue','day1var')">自訂<input id="day1var" class="inputvar" type="number" min="0" value="0" style="display:none;" onchange="inputvalue('day1in',this.value)" /></li>
+            <li id="day1select" onclick="selected('day1invalue','day1var')">自訂</li>
+            <ul style="width:100%;display:flex;justify-content: center;">
+                <input id="day1var" class="inputvar" type="number" min="0" value="0" style="display:none;" onchange="inputvalue('day1in',this.value)" />
+            </ul>
         </ul>
     </div>
     <div id="blockall2" >
