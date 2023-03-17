@@ -262,4 +262,7 @@ div{
         z-index: 200;
         
     }
+    #btnclear{
+        margin:12px;
+    }
 }
