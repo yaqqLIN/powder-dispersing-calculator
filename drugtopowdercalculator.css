@@ -1,0 +1,171 @@
+body{
+    background-color: rgb(187, 187, 187);
+    margin-top: 60px;
+    margin-bottom: 0;
+}
+li{
+    border-style: dashed;
+    border-width: 1px;
+    background-color: rgb(209, 253, 219);
+    width:100px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+li:hover{
+    background-color:rgb(151, 252, 174);
+}
+ul{
+    width: 90%;
+    padding-left: 0;
+}
+div{
+    display: flex;
+}
+.blocktitle{
+    color: white;
+    padding: 5px 7px;
+    border-radius:5px;
+    background: linear-gradient(#b4b4b4 0%, #555454 50%, #302f2f 50%, #131313 100%);
+    box-shadow:inset 1px 1px 0 rgba(0,0,0,1);
+    margin: 0;
+    cursor: auto;
+
+}
+.inputblock{
+    background-color: #aeabce;
+    display: flex;
+    align-items: center;
+    flex-direction:column;
+    
+}
+.postblock{
+    flex-direction: column;
+    
+    width:80%;
+    position:fixed ;
+    top: 1%;
+}
+#blockall,#blockall2{
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#postsaved,#selectCount,#btnclear,input{
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+}
+#postsaved{
+    height:7%;
+    width: 15%;
+    position: fixed;
+    top: 1%;
+    right: 1%;
+    color:red;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: rgb(146, 208, 250);
+    margin-bottom: 10px;
+}
+#savedboard{
+    background-color: white;
+    width:97%;
+    position:fixed;
+    right:1%;
+    top:10%;
+    z-index: 200;
+    
+}
+#savedboardtext{
+    height:300px;
+    overflow:auto;
+}
+#btnclear{
+    width:80%;
+    margin-left: 8%;
+    margin-bottom: 2%;
+}
+#selectCount{
+    display:flex;
+    flex-direction: column;
+    position:fixed;
+    gap:10%;
+    top:15%;
+    left:0;
+    width:5%;
+    height:30%;
+}
+@media(min-width:1200px){
+    h2{
+        margin-top: 40px;
+    }
+    li{
+        height:50px;
+        width:70%;
+    }
+    input{
+        height:30px;
+        width:60px;
+    }
+    .blocktitle{
+        font-size:24px ;
+    }
+    #blockall,#blockall2{
+        gap:15px;
+    }
+    #dosein,#frequencyin,#durationin,#day1in,#quantity2in,#pack2in,#frequency2in{
+        width:20%;
+        font-size: 28px;
+    }
+    #ptname,#drugname{
+        width:200px;
+        font-size: 20px;
+    }
+    #postblock{
+        font-size: 24px;
+    }
+    #btnclear{
+        height:50px;
+        font-size: 24px;
+    }
+    #selectCount{
+        font-size: 40px;
+    }
+}
+@media(max-width:1199px){
+    h2{
+        margin:2px;
+        margin-top: 10px;
+    }
+    li{
+        height:24px;
+    }
+    .blocktitle{
+        font-size:20px ;
+    }
+    #blockall{
+        gap:1%;
+    }
+    #dosein,#frequencyin,#durationin,#day1in,#quantity2in,#pack2in,#frequency2in{
+        width:100px;
+        padding: 3%;
+        height: 45%;
+        margin:2px;
+        margin-right: 15px;
+    }
+    input{
+        width:30px;
+    }
+    #ptname,#drugname{
+        width:80px;
+        
+    }
+    #postsavedhead{
+        font-size: 16px;
+    }
+    #postblock{
+        font-size: 14px;
+    }
+}
