@@ -98,6 +98,7 @@ div{
 @media(min-width:1200px){
     h2{
         margin-top: 40px;
+        font-size: 40px;
     }
     li{
         height:50px;
