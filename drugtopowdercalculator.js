@@ -107,7 +107,7 @@ function inputvalue(inputid,inputvalue){
     }else{
         postblock.inputcal="= 共 "+String(postblock.quantity)+" 顆，共"+String(postblock.packnum)+" 包 ";
     }
-    postblock.innerHTML="<div style='background-color: antiquewhite;'>"+postblock.nameinput+"</br>"+postblock.inputhtml+"</br>"+postblock.inputcal+"</div>";
+    postblock.innerHTML="<div style='background-color: antiquewhite;'>"+postblock.nameinput+"</br>"+postblock.inputhtml+"</br>"+postblock.inputcal+"</div><span style='display:flex'><button id='casebtn' onclick='savetext()' style='width:50px;'>儲存</button><span style='width:100%;opacity:0.1;'></span></span>";
 }
 function inputvalue2(inputid,inputvalue){
     let element=document.querySelector("#"+inputid);
@@ -123,7 +123,7 @@ function inputvalue2(inputid,inputvalue){
     }else{
         postblock.inputhtml="<次劑量: "+String(countdose.dose2in)+"> <頻次: "+String(countdose.frequency2in.value)+"> <天數: "+String(countdose.duration2in)+">";
     }
-    postblock.innerHTML="<div style='background-color: antiquewhite;'>"+postblock.nameinput+"</br>"+postblock.inputhtml+"</br>"+postblock.inputcal+"</div>";
+    postblock.innerHTML="<div style='background-color: antiquewhite;'>"+postblock.nameinput+"</br>"+postblock.inputhtml+"</br>"+postblock.inputcal+"</div><span style='display:flex'><button id='casebtn' onclick='savetext()' style='width:50px;'>儲存</button><span style='width:100%;opacity:0.1;'></span></span>";
 }
 function inputname(element,inputid){
     postblock[inputid]=element.value;
