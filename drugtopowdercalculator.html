@@ -13,10 +13,10 @@
         <div id="postsavedhead" onclick="showhide('savedboard')">查看儲存內容</div>
     </div>
     <div id="selectCount">
-        <div style="background-color: red;" onclick="shiftcount(this,3)">次劑量計算</div>
-        <div style="background-color: grey;" onclick="shiftcount(this,1)">總量計算</div>
+        <div class="selectCount" style="background-color: red;" onclick="shiftcount(this,3)">次劑量計算</div>
+        <div class="selectCount" style="background-color: grey;" onclick="shiftcount(this,1)">總量計算</div>
     </div>
-    <div id="savedboard" style="display:none;">
+    <div id="savedboard">
         <div style="display:flex;justify-content: right;height:3%;background-color: antiquewhite;">
             <button onclick="clearLst()">清空</button>
             <span style="flex: 1;">磨粉清單:</span>
@@ -36,7 +36,7 @@
         </div>
     </div>
     
-    <div id="blockall">
+    <div id="blockall" class="active">
         <ul id="dosein" class="inputblock">
             <li class="blocktitle">次劑量</li>
             <ul  id="doseinvalue" class="inputblock" style="width:100%;">
@@ -84,7 +84,7 @@
             <li id="day1select" onclick="selected('day1invalue','day1var')">自訂<input id="day1var" class="inputvar" type="number" min="0" value="0" style="display:none;" onchange="inputvalue('day1in',this.value)" /></li>
         </ul>
     </div>
-    <div id="blockall2" style="display:none;">
+    <div id="blockall2" >
         <ul id="quantity2in" class="inputblock">
             <li class="blocktitle">藥品總量</li>
             <li>共<input id="quantity2var" class="inputvar2" type="number" min="0" value="0" onchange="inputvalue2('quantity2in',this.value)"/>顆</li>
