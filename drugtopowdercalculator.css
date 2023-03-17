@@ -45,21 +45,9 @@ div{
 }
 .postblock{
     flex-direction: column;
-    
     width:80%;
     position:fixed ;
     top: 1%;
-}
-#blockall,#blockall2{
-    width:80%;
-    display:flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    position:fixed;
-    top:25%;
-    right:10%;
-    
-
 }
 #postsaved,#selectCount,#btnclear,input{
     border-radius: 8px;
@@ -87,16 +75,6 @@ div{
     font-weight: bold;
     background-color: rgb(146, 208, 250);
     margin-bottom: 10px;
-}
-#savedboard{
-    display: block;
-    background-color: white;
-    width:97%;
-    position:fixed;
-    right:1%;
-    top:10%;
-    z-index: 200;
-    
 }
 #savedboardtext{
     height:300px;
@@ -153,11 +131,30 @@ div{
     #selectCount{
         font-size: 40px;
     }
+    #blockall,#blockall2{
+        width:80%;
+        display:flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        position:fixed;
+        top:30%;
+        right:10%;
+    }
+    #savedboard{
+        display: block;
+        background-color: white;
+        width:98%;
+        position:fixed;
+        right:1%;
+        top:10%;
+        z-index: 200;
+        
+    }
 }
-@media(max-width:1199px){
+@media(max-width:1199px) and (min-height:500px){
     h2{
         margin:2px;
-        margin-top: 10px;
+        margin-top:10px;
     }
     li{
         height:24px;
@@ -187,5 +184,79 @@ div{
     }
     #postblock{
         font-size: 14px;
+    }
+    #blockall,#blockall2{
+        width:80%;
+        display:flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        position:fixed;
+        top:25%;
+        right:10%;
+    }
+    #savedboard{
+        display: block;
+        background-color: white;
+        width:97%;
+        position:fixed;
+        right:1%;
+        top:10%;
+        z-index: 200;
+        
+    }
+}
+@media(max-width:1199px) and (max-height:499px){
+    h2{
+        position:fixed;
+        top:0.5%;
+        opacity: 0.3;
+    }
+    li{
+        height:24px;
+    }
+    .blocktitle{
+        font-size:20px ;
+    }
+    #blockall{
+        gap:1%;
+    }
+    #dosein,#frequencyin,#durationin,#day1in,#quantity2in,#pack2in,#frequency2in{
+        width:80px;
+        padding: 3%;
+        height: 45%;
+        margin:1px;
+        margin-right: 15px;
+    }
+    input{
+        width:30px;
+    }
+    #ptname,#drugname{
+        width:80px;
+    }
+    #postsavedhead{
+        font-size: 16px;
+    }
+    #postblock{
+        font-size: 14px;
+        left:5%;
+    }
+    #blockall,#blockall2{
+        width:80%;
+        display:flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        position:fixed;
+        top:32%;
+        right:10%;
+    }
+    #savedboard{
+        display: block;
+        background-color: white;
+        width:97%;
+        position:fixed;
+        right:1%;
+        top:10%;
+        z-index: 200;
+        
     }
 }
