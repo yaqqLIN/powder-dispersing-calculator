@@ -23,6 +23,9 @@ ul{
 div{
     display: flex;
 }
+.selectCount{
+    cursor: pointer;
+}
 .blocktitle{
     color: white;
     padding: 5px 7px;
@@ -48,14 +51,30 @@ div{
     top: 1%;
 }
 #blockall,#blockall2{
+    width:80%;
     display:flex;
     justify-content: center;
     flex-wrap: wrap;
+    position:fixed;
+    top:25%;
+    right:10%;
+    
+
 }
 #postsaved,#selectCount,#btnclear,input{
     border-radius: 8px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     cursor: pointer;
+}
+#savedboard,#blockall,#blockall2{
+    opacity: 0; /* 設置透明度為 0，讓其隱藏 */
+    transform: scale(0); /* 設置縮放比例為 0，讓其不佔空間 */
+    transition: all 0.3s ease-out;
+}
+
+#savedboard.active,#blockall.active,#blockall2.active{
+    opacity: 1; /* 設置透明度為 1，讓其顯示 */
+    transform: scale(1);
 }
 #postsaved{
     height:7%;
@@ -70,6 +89,7 @@ div{
     margin-bottom: 10px;
 }
 #savedboard{
+    display: block;
     background-color: white;
     width:97%;
     position:fixed;
