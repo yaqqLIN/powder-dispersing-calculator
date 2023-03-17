@@ -69,6 +69,7 @@ function resetCSS(){
     let elementli=document.getElementsByTagName("li");
     let elementul=document.getElementsByTagName("ul");
     let elementvar=document.getElementsByClassName("inputvar")
+    let elementvar2=document.getElementsByClassName("inputvar2")
     for(i=0;i<100;i++){
         if(elementli[i]){
             elementli[i].style="background-color: rgb(209, 253, 219);"
@@ -83,6 +84,11 @@ function resetCSS(){
         if(elementvar[i]){
             elementvar[i].style="display:none;";
             elementvar[i].value=0;
+        }
+    }
+    for(i=0;i<3;i++){
+        if(elementvar2[i]){
+            elementvar2[i].value=0;
         }
     }
     dosein.value=0.00;
@@ -117,7 +123,6 @@ function inputvalue2(inputid,inputvalue){
     countdose.dose2in=roundToTwo(countdose.quantity2in.value/countdose.pack2in.value);
     countdose.duration2in=roundToTwo(countdose.pack2in.value/countdose.frequency2in.value);
     postblock.inputcal="= 共 "+String(countdose.quantity2in.value)+" 顆，共"+String(countdose.pack2in.value)+" 包 ";
-    console.log(postblock)
     if(countdose.pack2in.value == 0 || countdose.frequency2in.value == 0){
         postblock.inputhtml="未輸入完成";
     }else{
