@@ -137,7 +137,7 @@ div{
         justify-content: center;
         flex-wrap: wrap;
         position:fixed;
-        top:30%;
+        top:35%;
         right:10%;
     }
     #savedboard{
@@ -272,6 +272,7 @@ div{
     }
     #ptname,#drugname{
         width:80px;
+        z-index: 5;
     }
     #postsavedhead{
         font-size: 16px;
@@ -289,6 +290,7 @@ div{
         position:fixed;
         top:40%;
         right:10%;
+        z-index: 1;
     }
     #savedboard{
         display: block;
