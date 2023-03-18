@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="drugtopowdercalculator.css">
+    <title>磨粉計算機</title>
+</head>
+<body>
+    <div id="postblock" class="postblock"></div>
+    <div id="postsaved" >
+        <div id="postsavedhead" onclick="showhide('savedboard')">查看儲存內容</div>
+    </div>
+    <div id="selectCount">
+        <div class="selectCount" style="background-color: red;" onclick="shiftcount(this,3)">次劑量計算</div>
+        <div class="selectCount" style="background-color: grey;" onclick="shiftcount(this,1)">總量計算</div>
+    </div>
+    <div id="savedboard">
+        <div style="display:flex;justify-content: right;height:3%;background-color: antiquewhite;">
+            <button onclick="clearLst()">清空</button>
+            <span style="flex: 1;">磨粉清單:</span>
+            <button onclick="downloadLst()">存檔</button>
+            <button onclick="showhide('savedboard')">關閉</button>
+        </div>
+        <div id="savedboardtext"></div>
+    </div>
+    <div style="display:flex;align-items: center;flex-direction: column;">
+        <h2 style="color:darkblue ;"><center>磨粉計算機</center></h2>
+        <button id="btnclear" onclick="resetCSS()" style="background-color: aquamarine;">重新輸入</button>
+        <div style="margin: 0 auto;margin-bottom: 1%;">
+            <span>姓名:</span>
+            <input id="ptname"  class="inputvar2" type="text" onchange="inputname(this,'ptname')" /> 
+            <span>藥品名稱：</span>
+            <input id="drugname"  class="inputvar2" type="text" onchange="inputname(this,'drugname')" /> 
+        </div>
+    </div>
+    
+    <div id="blockall" class="active">
+        <ul id="dosein" class="inputblock">
+            <li class="blocktitle">次劑量</li>
+            <ul  id="doseinvalue" class="inputblock" style="width:100%;">
+                <li onclick="inputvalue('dosein',0.25),selectedin(this,'dosein')">0.25</li>
+                <li onclick="inputvalue('dosein',0.33),selectedin(this,'dosein')">0.33</li>
+                <li onclick="inputvalue('dosein',0.5),selectedin(this,'dosein')">0.5</li>
+                <li onclick="inputvalue('dosein',0.67),selectedin(this,'dosein')">0.67</li>
+            </ul>
+            <li id="dosevarselect" onclick="selected('doseinvalue','dosevar')">自訂</li>
+            <ul style="width:100%;display:flex;justify-content: center;">
+                <input style="display:none;" id="dosevar" class="inputvar" type="number" min="0" value="0" onchange="inputvalue('dosein',this.value)"/>
+            </ul>
+        </ul>
+        <ul id="frequencyin" class="inputblock">
+            <li class="blocktitle">頻次</li>
+            <ul id="frequencyinvalue" class="inputblock" style="width:100%">
+                <li onclick="inputvalue('frequencyin',1.0),selectedin(this,'frequencyin')">QD</li>
+                <li onclick="inputvalue('frequencyin',2.0),selectedin(this,'frequencyin')">BID</li>
+                <li onclick="inputvalue('frequencyin',3.0),selectedin(this,'frequencyin')">TID</li>
+                <li onclick="inputvalue('frequencyin',4.0),selectedin(this,'frequencyin')">QID</li>
+            </ul>
+            <li id="frequencyselect" onclick="selected('frequencyinvalue','frequencyv')">自訂</li>
+            <div id="frequencyv" class="inputvar" style="display:none;">
+                <li style="padding-left: 0;width: 100%;" >一天<input id="frequencyvar" class="inputvar2" type="number" min="0" value=0 onchange="inputvalue('frequencyin',this.value)" />次</li>
+            </div>
+        </ul>
+        <ul id="durationin" class="inputblock">
+            <li class="blocktitle">天數</li>
+            <ul id="durationinvalue" class="inputblock" style="width:100%">
+                <li onclick="inputvalue('durationin',1.0),selectedin(this,'durationin')">1</li>
+                <li onclick="inputvalue('durationin',2.0),selectedin(this,'durationin')">2</li>
+                <li onclick="inputvalue('durationin',3.0),selectedin(this,'durationin')">3</li>
+                <li onclick="inputvalue('durationin',7.0),selectedin(this,'durationin')">7</li>
+            </ul>
+            <li id="durationselect" onclick="selected('durationinvalue','durationvar')">自訂</li>
+            <ul style="width:100%;display:flex;justify-content: center;">
+                <input id="durationvar" class="inputvar" type="number" min="0" value="0" style="display:none;"  onchange="inputvalue('durationin',this.value)" />
+            </ul>
+        </ul>
+        <ul id="day1in" class="inputblock">
+            <li class="blocktitle">首日包數</li>
+            <ul id="day1invalue" class="inputblock" style="width:100%">
+                <li onclick="inputvalue('day1in',0.0),selectedin(this,'day1in')">0</li>
+                <li onclick="inputvalue('day1in',1.0),selectedin(this,'day1in')">1</li>
+                <li onclick="inputvalue('day1in',2.0),selectedin(this,'day1in')">2</li>
+                <li onclick="inputvalue('day1in',3.0),selectedin(this,'day1in')">3</li>
+            </ul>
+            <li id="day1select" onclick="selected('day1invalue','day1var')">自訂</li>
+            <ul style="width:100%;display:flex;justify-content: center;">
+                <input id="day1var" class="inputvar" type="number" min="0" value="0" style="display:none;" onchange="inputvalue('day1in',this.value)" />
+            </ul>
+        </ul>
+    </div>
+    <div id="blockall2" >
+        <ul id="quantity2in" class="inputblock">
+            <li class="blocktitle">藥品總量</li>
+            <li>共<input id="quantity2var" class="inputvar2" type="number" min="0" value="0" onchange="inputvalue2('quantity2in',this.value)"/>顆</li>
+        </ul>
+        <ul id="pack2in" class="inputblock">
+            <li class="blocktitle">總包數</li>
+            <li>共<input id="pack2var" class="inputvar2" type="number" min="0" value="0" onchange="inputvalue2('pack2in',this.value)"/>包</li>
+        </ul>
+        <ul id="frequency2in" class="inputblock">
+            <li class="blocktitle">頻次</li>
+            <ul id="frequency2invalue" class="inputblock" style="width:100%">
+                <li onclick="inputvalue2('frequency2in',1.0),selectedin(this,'frequency2in')">QD</li>
+                <li onclick="inputvalue2('frequency2in',2.0),selectedin(this,'frequency2in')">BID</li>
+                <li onclick="inputvalue2('frequency2in',3.0),selectedin(this,'frequency2in')">TID</li>
+                <li onclick="inputvalue2('frequency2in',4.0),selectedin(this,'frequency2in')">QID</li>
+            </ul>
+            <li id="frequency2select" onclick="selected('frequency2invalue','frequencyv2')">自訂</li>
+            <div id="frequencyv2" class="inputvar" style="display:none;">
+                <li style="padding-left: 0;width: 100%;" >一天<input id="frequencyvar" type="number" min="0" value=0 onchange="inputvalue2('frequency2in',this.value)" />次</li>
+        </ul>
+    </div>
+    <script src="drugtopowdercalculator.js"></script>
+</body>
+</html>
