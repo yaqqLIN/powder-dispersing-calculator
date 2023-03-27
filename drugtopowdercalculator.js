@@ -70,23 +70,23 @@ function resetCSS(){
     let elementul=document.getElementsByTagName("ul");
     let elementvar=document.getElementsByClassName("inputvar")
     let elementvar2=document.getElementsByClassName("inputvar2")
-    for(i=0;i<100;i++){
+    for(i=0;i<elementli.length;i++){
         if(elementli[i]){
             elementli[i].style="background-color: rgb(209, 253, 219);"
         }
     }
-    for(i=0;i<30;i++){
+    for(i=0;i<elementul.length;i++){
         if(elementul[i]){
             elementul[i].style="pointer-events:auto;opacity:1;";
         }
     }
-    for(i=0;i<10;i++){
+    for(i=0;i<elementvar.length;i++){
         if(elementvar[i]){
             elementvar[i].style="display:none;";
             elementvar[i].value=0;
         }
     }
-    for(i=0;i<3;i++){
+    for(i=0;i<elementvar2.length;i++){
         if(elementvar2[i]){
             elementvar2[i].value=0;
         }
@@ -121,12 +121,13 @@ function inputvalue2(inputid,inputvalue){
     postblock.inputhtml="未輸入完成";
     element.value=parseFloat(inputvalue);
     countdose.dose2in=roundToTwo(countdose.quantity2in.value/countdose.pack2in.value);
-    countdose.duration2in=roundToTwo(countdose.pack2in.value/countdose.frequency2in.value);
+    countdose.day12in=countdose.pack2in.value%countdose.frequency2in.value
+    countdose.duration2in=roundToTwo((countdose.pack2in.value-countdose.day12in)/countdose.frequency2in.value);
     postblock.inputcal="共 "+String(countdose.quantity2in.value)+" 顆，共"+String(countdose.pack2in.value)+" 包";
     if(countdose.pack2in.value == 0 || countdose.frequency2in.value == 0){
         postblock.inputhtml="未輸入完成";
     }else{
-        postblock.inputhtml="<次劑量: "+String(countdose.dose2in)+"> <頻次: "+String(countdose.frequency2in.value)+"> <天數: "+String(countdose.duration2in)+">";
+        postblock.inputhtml="<次劑量: "+String(countdose.dose2in)+"> <頻次: "+String(countdose.frequency2in.value)+"> <天數: "+String(countdose.duration2in)+"><首日: "+String(countdose.day12in)+" 包>";
     }
     postblock.innerHTML="<div style='background-color: antiquewhite;'>"+postblock.nameinput+"</br>"+postblock.inputhtml+"</br>"+postblock.inputcal+"</div><span style='display:flex'><button id='casebtn' onclick='savetext()' style='width:50px;'>儲存</button><span style='width:100%;opacity:0.1;'></span></span>";
 }
